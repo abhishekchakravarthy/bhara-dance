@@ -21,6 +21,10 @@ import logo from './assets/logo.png';
 import './index.css';
 
 const style = `
+  html {
+    scroll-behavior: smooth;
+  }
+
   .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -35,13 +39,27 @@ const style = `
   }
 
   .gallery-pop {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: scale(0.95) translateY(10px);
+  animation: fadeSlideIn 0.6s ease forwards;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
   }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
 
   .gallery-pop:hover {
-    transform: scale(1.5);
+    transform: scale(1.05);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     z-index: 2;
     position: relative;
@@ -245,7 +263,7 @@ function App() {
 
       <section id="contact" style={{ padding: '2rem', textAlign: 'center' }}>
         <h3 style={{ fontSize: '2rem' }}>Contact Us</h3>
-        <p>Email: contact@natyasangeet.com</p>
+        <p>Email: laasyanrithyakshethra@gmail.com</p>
         <p>Phone: +91 84317 76301</p>
         <p>Location: Bengaluru, Karnataka</p>
       </section>
@@ -267,18 +285,18 @@ function App() {
 function GalleryRouletteFour() {
   const [itemsPerPage, setItemsPerPage] = useState(getItemsPerPage());
 
-function getItemsPerPage() {
-  return window.innerWidth <= 600 ? 1 : 4;
-}
+  function getItemsPerPage() {
+    return window.innerWidth <= 600 ? 1 : 4;
+  }
 
-useEffect(() => {
-  const handleResize = () => {
-    setItemsPerPage(getItemsPerPage());
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(getItemsPerPage());
+    };
 
-  window.addEventListener('resize', handleResize);
-  return () => window.removeEventListener('resize', handleResize);
-}, []);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   const [startIndex, setStartIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const totalImages = images.length;
@@ -330,17 +348,17 @@ useEffect(() => {
       ref={containerRef}
     >
       <h3 style={{ fontSize: '2rem' }}>Gallery</h3>
-     <div className="gallery-slide" style={{
-  display: 'grid',
-  gridTemplateColumns: `repeat(${itemsPerPage}, 1fr)`,
-  gap: '1rem',
-  margin: '1.5rem auto',
-  padding: '0 1rem',
-  transition: 'transform 0.5s ease'
-}}>
+      <div className="gallery-slide" style={{
+        display: 'grid',
+        gridTemplateColumns: `repeat(${itemsPerPage}, 1fr)`,
+        gap: '1rem',
+        margin: '1.5rem auto',
+        padding: '0 1rem',
+        transition: 'transform 0.5s ease'
+      }}>
         {visibleImages.map((img, i) => (
           <img
-            key={i}
+            key={`${startIndex}-${i}`} // force refresh animation on index change
             src={img}
             alt={`Dance ${startIndex + i}`}
             className="gallery-pop"
