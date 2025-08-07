@@ -1,0 +1,28 @@
+Designator,Quantity,MPN,Manufacturer,Description,Notes
+U1,1,ESP32-WROOM-32E-N4,Espressif,WiFi/BT module 4MB flash,Antenna keep-out at board edge
+U2,1,BQ24074RGT,Texas Instruments,Li-Ion charger with power-path NTC,QFN-16
+U3,1,TPS63020DMR,Texas Instruments,Buck-boost 3.3V regulator,VSON-10
+U4,1,CP2102N-A02-GQFN24,Silicon Labs,USB-UART bridge,QFN-24
+U5,1,DW01A,Fortune/Different,SOT-23-6 Li-ion protector controller,With dual MOSFET FS8205A
+Q1,Q2,2,MMBT3904,Diodes Inc,NPN SOT-23,Auto-program/reset
+J1,1,USB4085-GF-A,GCT,USB Type-C receptacle,USB 2.0 only
+J2,1,B2B-PH-SM4-TB,JST,JST-PH 2-pin Battery,Li-ion pack
+L1,1,XFL4020-222MEC,Coilcraft,Inductor 2.2uH 3A sat,For TPS63020
+FB1,1,BLM21PG601SN1D,TDK,Ferrite bead 600Ω@100MHz 2A,USB power
+F1,1,RHEF150,Bel Fuse,Polyfuse 1.5A hold,USB input
+D1,1,USBLC6-2SC6,STMicroelectronics,USB ESD protector,D+/D-
+D2,1,SMF5.0A,Diodes Inc,TVS diode 5V SMBF,VBUS protection
+Rcc1,Rcc2,2,RC0603FR-075K1L,Yageo,5.1k 0603 CC resistors,CC1/CC2 to GND
+Rpu_EN,1,RC0603FR-0710KL,Yageo,10k 0603,EN pull-up
+Rpu_IO0,1,RC0603FR-0710KL,Yageo,10k 0603,IO0 pull-up
+Rpd_IO12,1,RC0603FR-07100KL,Yageo,100k 0603,IO12 pull-down
+Cdec_ESP,2,CC0603KRX7R9BB104,Yageo,0.1uF 0603,ESP32 decoupling
+Cbulk_3V3,2,CL21A226MOCLRNC,Samsung,22uF 0805,3V3 bulk
+Cin_bb,2,CL21A226MOCLRNC,Samsung,22uF 0805,TPS63020 input
+Cout_bb,2,CL21A226MOCLRNC,Samsung,22uF 0805,TPS63020 output
+NTC1,1,NCP15XH103F03RC,TDK,10k NTC 0402,Battery temp
+LED1,1,LTST-C190KRKT,Lite-On,Red LED 0603,Charging
+LED2,1,LTST-C190KGKT,Lite-On,Green LED 0603,PG/Done
+Rled1,Rled2,2,RC0603FR-0710KL,Yageo,1k 0603,LED resistors
+SW1-SW7,7,PTS636 SKG250 SMTR LFS,C&K,Tactile switch 6x3.5mm,GND to GPIOs
+TP*,10,Testpoint,Generic,Test points,3V3 GND BAT SYS EN IO0 TX RX D+ D-
