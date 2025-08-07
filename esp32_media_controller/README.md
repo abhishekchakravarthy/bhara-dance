@@ -34,5 +34,19 @@ Assumptions:
 - Auto-reset: CP2102N DTR/RTS through NPN pair to pull EN and IO0.
 - Buttons: Firmware should enable internal pull-ups. Optional 100 nF to GND per key for debounce.
 
+## Buttons header (BTN_HDR 1×9, 2.54 mm)
+Pinout (left→right):
+1: GND
+2: GPIO16 (Vol Up)
+3: GPIO17 (Vol Down)
+4: GPIO18 (Prev)
+5: GPIO19 (Next)
+6: GPIO21 (Play/Pause)
+7: GPIO22 (Power)
+8: GPIO23 (Voice)
+9: GND
+
+Wiring: use momentary NO buttons. Connect one leg of each button to its GPIO pin above, the other leg to any `GND` (pins 1 or 9 are convenient). Enable `INPUT_PULLUP` in firmware; pressed reads LOW.
+
 ## License
 Provided as-is. Verify against datasheets and perform bring-up testing.

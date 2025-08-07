@@ -7,6 +7,7 @@ U5,1,DW01A,Fortune/Different,SOT-23-6 Li-ion protector controller,With dual MOSF
 Q1,Q2,2,MMBT3904,Diodes Inc,NPN SOT-23,Auto-program/reset
 J1,1,USB4085-GF-A,GCT,USB Type-C receptacle,USB 2.0 only
 J2,1,B2B-PH-SM4-TB,JST,JST-PH 2-pin Battery,Li-ion pack
+J3,1,PH1-09-UA,Adam Tech,Header 1x9 2.54mm vertical,Buttons header BTN_HDR
 L1,1,XFL4020-222MEC,Coilcraft,Inductor 2.2uH 3A sat,For TPS63020
 FB1,1,BLM21PG601SN1D,TDK,Ferrite bead 600Ω@100MHz 2A,USB power
 F1,1,RHEF150,Bel Fuse,Polyfuse 1.5A hold,USB input
