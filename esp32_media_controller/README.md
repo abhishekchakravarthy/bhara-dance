@@ -34,8 +34,11 @@ Assumptions:
 - Auto-reset: CP2102N DTR/RTS through NPN pair to pull EN and IO0.
 - Buttons: Firmware should enable internal pull-ups. Optional 100 nF to GND per key for debounce.
 
-## Buttons header (BTN_HDR 1×9, 2.54 mm)
-Pinout (left→right):
+## Buttons connector (sealed) and pinout
+- Connector: `J3` JST JWPF 10-pin, sealed/locking (bike-friendly). Mating harness recommended.
+- Protection: Per-button RC (1 kΩ series + 100 nF to GND) and shared ESD array on the bundle.
+
+Pinout order:
 1: GND
 2: GPIO16 (Vol Up)
 3: GPIO17 (Vol Down)
@@ -45,8 +48,9 @@ Pinout (left→right):
 7: GPIO22 (Power)
 8: GPIO23 (Voice)
 9: GND
+10: Shield/NC (reserve)
 
-Wiring: use momentary NO buttons. Connect one leg of each button to its GPIO pin above, the other leg to any `GND` (pins 1 or 9 are convenient). Enable `INPUT_PULLUP` in firmware; pressed reads LOW.
+Wiring: use sealed momentary NO buttons on the handlebar. Connect each GPIO line to one side of a button, other side to GND. Enable `INPUT_PULLUP`; pressed reads LOW. Use a sealed cable gland and strain relief into the enclosure.
 
 ## License
 Provided as-is. Verify against datasheets and perform bring-up testing.
