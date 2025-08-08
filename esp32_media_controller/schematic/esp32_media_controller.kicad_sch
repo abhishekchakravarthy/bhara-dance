@@ -1,0 +1,11 @@
+(kicad_sch (version 20211014) (generator kicad)
+  (paper "A4")
+  (title_block
+    (title "ESP32 Media Controller")
+    (date "2025-08-07")
+    (rev "A")
+    (company "")
+    (comment 1 "ESP32-WROOM-32E, BQ24074, TPS63020, CP2102N, USB-C, 7 Buttons")
+  )
+  (text ~ 5 10 "Top-Level Notes: Industry-standard integrated design. See README for details.")
+)
